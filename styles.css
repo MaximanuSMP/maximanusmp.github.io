@@ -27,12 +27,16 @@ main {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Abstand zwischen Logo und Menü */
     align-items: center;
     padding: 10px 20px;
     background-color: var(--header-background);
     color: var(--header-text);
     transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.logo {
+    flex-grow: 1; /* Vergrößert den Logo-Bereich, um Platz für das Menü zu schaffen */
 }
 
 .logo img {
@@ -47,9 +51,10 @@ nav {
 }
 
 .menu-toggle {
-    display: none;
+    display: none; /* Standardmäßig verstecken */
     font-size: 30px;
     cursor: pointer;
+    margin-left: auto; /* Schiebt den Menüknopf nach rechts */
 }
 
 ul {
@@ -121,7 +126,7 @@ footer {
     }
 
     .menu-toggle {
-        display: block;
+        display: block; /* Menüknopf auf mobilen Geräten anzeigen */
     }
 }
 
