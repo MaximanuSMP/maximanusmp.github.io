@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maximanu SMP | Über</title>
+    <title>Maximanu SMP | Über uns</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="../favicon.png" type="image/x-icon">
 </head>
 <body>
     <header>
+        <div class="logo">
+            <img src="logo.png" alt="Maximanu SMP Logo">
+        </div>
         <nav>
-            <ul>
-                <li><a href="../" onclick="loadPage('home')">Home</a></li>
-                <li><a href="../about/" onclick="loadPage('about')">Über uns</a></li>
-                <li><a href="../contact/" onclick="loadPage('contact')">Kontakt</a></li>
-                <li><a href="../wiki/" onclick="loadPage('wiki')">Wiki</a></li>
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul id="nav-menu">
+                <li><a href="../" onclick="loadPage('home.html')">Home</a></li>
+                <li><a href="../about" onclick="loadPage('about.html')">Über uns</a></li>
+                <li><a href="../contact" onclick="loadPage('contact.html')">Kontakt</a></li>
+                <li><a href="../wiki" onclick="loadPage('wiki.html')">Wiki</a></li>
             </ul>
         </nav>
     </header>
-    <main id="content">
+    <main id="content" class="fade-in">
         <h1>Über uns</h1>
         <p>Wir sind das Team eines kleinen Minecraft Servers.</p>
-        <p>Minecraft: https://www.minecraft.net/de-de</p>
+        <p>Minecraft: <a href="https://www.minecraft.net/de-de" target="_blank">Offizielle Website</a></p>
     </main>
     <footer>
         <p>&copy; 2024 Maximanu SMP. All rights reserved.</p>
