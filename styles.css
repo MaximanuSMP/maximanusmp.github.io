@@ -1,13 +1,31 @@
 /* Basis-Layout */
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%; /* Stelle sicher, dass HTML und Body die volle Höhe einnehmen */
     margin: 0;
     padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
     background-color: var(--background);
     color: var(--text);
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+/* Haupt-Inhalt soll zentriert und den verbleibenden Platz einnehmen */
+main {
+    flex: 1; /* Nimmt den gesamten verbleibenden Platz zwischen Header und Footer ein */
+    display: flex;
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
+    text-align: center; /* Text zentrieren */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Header Styling */
 header {
     display: flex;
     justify-content: space-between;
@@ -56,12 +74,15 @@ a:hover {
     color: var(--link-hover);
 }
 
+/* Footer bleibt unten */
 footer {
     text-align: center;
     padding: 10px 0;
     background-color: var(--footer-background);
     color: var(--footer-text);
     transition: background-color 0.5s ease, color 0.5s ease;
+    position: relative;
+    width: 100%;
 }
 
 /* Animationen */
