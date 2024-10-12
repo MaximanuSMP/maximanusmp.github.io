@@ -8,8 +8,6 @@ html, body {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
     font-family: Arial, sans-serif;
     background-color: var(--background);
     color: var(--text);
@@ -45,6 +43,7 @@ header {
 nav {
     display: flex;
     align-items: center;
+    position: relative; /* Für das Menü */
 }
 
 .menu-toggle {
@@ -58,7 +57,15 @@ ul {
     margin: 0;
     padding: 0;
     display: flex;
-    transition: transform 0.3s ease;
+    transition: max-height 0.3s ease, opacity 0.3s ease; /* Animation für max-height und opacity */
+    overflow: hidden; /* Versteckt den Inhalt beim Schließen */
+    max-height: 0; /* Anfangshöhe auf 0 setzen */
+    opacity: 0; /* Anfangs unsichtbar */
+}
+
+ul.open {
+    max-height: 500px; /* Maximale Höhe beim Öffnen */
+    opacity: 1; /* Sichtbar machen */
 }
 
 li {
@@ -111,11 +118,7 @@ footer {
 @media (max-width: 768px) {
     ul {
         flex-direction: column;
-        display: none;
-    }
-
-    ul.open {
-        display: flex;
+        display: block; /* Für die Animation */
     }
 
     .menu-toggle {
