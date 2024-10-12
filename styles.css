@@ -1,146 +1,97 @@
-/* Basis-Layout */
-html, body {
-    height: 100%; /* HTML und Body füllen die volle Höhe */
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--background);
-    color: var(--text);
-    transition: background-color 0.5s ease, color 0.5s ease;
-    text-align: center; /* Text auf der ganzen Seite zentrieren */
+    transition: background-color 0.3s, color 0.3s;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-main {
-    flex: 1; /* Nimmt den verbleibenden Platz zwischen Header und Footer ein */
-    display: flex;
-    flex-direction: column; /* Inhalte vertikal anordnen */
-    justify-content: flex-start; /* Text oben positionieren */
-    align-items: center; /* Horizontal zentrieren */
-    padding: 20px;
-    box-sizing: border-box;
+:root {
+    --background-color: #ffffff; /* Hellmodus */
+    --text-color: #000000; /* Hellmodus */
+}
+
+.dark-mode {
+    --background-color: #121212; /* Dunkelmodus */
+    --text-color: #ffffff; /* Dunkelmodus */
 }
 
 header {
     display: flex;
-    justify-content: space-between; /* sorgt dafür, dass Logo und Menüknopf an den Rändern sind */
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: var(--header-background);
-    color: var(--header-text);
-    transition: background-color 0.5s ease, color 0.5s ease;
-    position: relative; /* für das Menü */
+    padding: 1rem;
+    background: #007bff;
+    color: white;
 }
 
-.logo {
-    display: flex; /* Flexbox aktivieren für zentrierte Ausrichtung */
-    align-items: center; /* vertikale Zentrierung */
-}
-
-.menu-toggle {
-    display: none; /* Standardmäßig nicht sichtbar */
-    font-size: 30px;
-    cursor: pointer;
-    margin-left: auto; /* sorgt dafür, dass der Menüknopf ganz rechts ist */
-}
-
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    transition: max-height 0.3s ease, opacity 0.3s ease; /* Animation für max-height und opacity */
-    overflow: hidden; /* Versteckt den Inhalt beim Schließen */
-    max-height: 0; /* Anfangshöhe auf 0 setzen */
-    opacity: 0; /* Anfangs unsichtbar */
-}
-
-ul.open {
-    max-height: 500px; /* Maximale Höhe beim Öffnen */
-    opacity: 1; /* Sichtbar machen */
-}
-
-li {
-    margin: 0 10px;
-}
-
-a {
-    text-decoration: none;
-    color: var(--link);
+header .logo {
+    font-size: 1.5rem;
     font-weight: bold;
-    transition: color 0.3s ease;
 }
 
-a:hover {
-    color: var(--link-hover);
+nav {
+    position: relative;
 }
 
-/* Footer */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* Gold */
+}
+
+#menuToggle {
+    display: none;
+}
+
+main {
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
 footer {
     text-align: center;
-    padding: 10px 0;
-    background-color: var(--footer-background);
-    color: var(--footer-text);
-    transition: background-color 0.5s ease, color 0.5s ease;
-    margin-top: auto; /* Footer bleibt am Ende der Seite */
-    width: 100%;
+    padding: 1rem;
+    background: #007bff;
+    color: white;
 }
 
-/* Animationen */
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
-}
-
-.fade-out {
-    animation: fadeOut 0.5s forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-/* Mobile Ansicht */
+/* Responsive Menu */
 @media (max-width: 768px) {
-    ul {
+    nav ul {
+        display: none;
         flex-direction: column;
-        display: block; /* Für die Animation */
     }
 
-    .menu-toggle {
+    nav ul.active {
+        display: flex;
+    }
+
+    #menuToggle {
         display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
     }
-}
-
-/* Dark und Light Modus */
-:root {
-    --background: #fff;
-    --text: #000;
-    --header-background: #f8f9fa;
-    --header-text: #333;
-    --link: #0066cc;
-    --link-hover: #004499;
-    --footer-background: #f1f1f1;
-    --footer-text: #333;
-}
-
-[data-theme="dark"] {
-    --background: #121212;
-    --text: #f1f1f1;
-    --header-background: #1c1c1c;
-    --header-text: #fff;
-    --link: #3399ff;
-    --link-hover: #80bfff;
-    --footer-background: #1c1c1c;
-    --footer-text: #ccc;
 }
