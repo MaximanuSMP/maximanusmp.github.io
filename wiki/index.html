@@ -9,22 +9,26 @@
 </head>
 <body>
     <header>
+        <div class="logo">
+            <img src="../logo.png" alt="Maximanu SMP Logo">
+        </div>
         <nav>
-            <ul>
-                <li><a href="../" onclick="loadPage('home')">Home</a></li>
-                <li><a href="../about" onclick="loadPage('about')">Über uns</a></li>
-                <li><a href="../contact" onclick="loadPage('contact')">Kontakt</a></li>
-                <li><a href="../wiki" onclick="loadPage('wiki')">Wiki</a></li>
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul id="nav-menu">
+                <li><a href="" onclick="loadPage('home.html')">Home</a></li>
+                <li><a href="../about" onclick="loadPage('about.html')">Über uns</a></li>
+                <li><a href="../contact" onclick="loadPage('contact.html')">Kontakt</a></li>
+                <li><a href="../wiki" onclick="loadPage('wiki.html')">Wiki</a></li>
             </ul>
         </nav>
     </header>
-    <main id="content">
+    <main id="content" class="fade-in">
         <h1>Wiki</h1>
         <p>Willkommen auf der Wiki Seite! Hier findest du alle Informationen und Anleitungen für unseren Minecraft-Server.</p>
         <div id="wikiContent">
             <h2>Ränge</h2>
-            <p>VIP+: /repair</p>
-            <p>VIP: /workbench /anvil</p>
+            <p><strong>VIP+:</strong> /repair</p>
+            <p><strong>VIP:</strong> /workbench /anvil</p>
         </div>
     </main>
     <footer>
