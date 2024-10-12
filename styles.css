@@ -31,9 +31,8 @@ header {
 }
 
 header .logo img {
-    max-height: 50px; /* Höchstgrenze für die Höhe des Logos */
+    max-height: 80px; /* Höchstgrenze für die Höhe des Logos (angepasst) */
     width: auto; /* Erhält das Seitenverhältnis */
-    /* Optional: max-width für die Breite, falls gewünscht */
     max-width: 100%; /* Stellt sicher, dass das Bild nicht über den Container hinausgeht */
 }
 
