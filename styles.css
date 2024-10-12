@@ -31,8 +31,10 @@ header {
 }
 
 header .logo img {
-    height: 50px; /* Höhe des Logos */
-    width: auto; /* Sorgt für die proportionale Darstellung des Logos */
+    max-height: 50px; /* Höchstgrenze für die Höhe des Logos */
+    width: auto; /* Erhält das Seitenverhältnis */
+    /* Optional: max-width für die Breite, falls gewünscht */
+    max-width: 100%; /* Stellt sicher, dass das Bild nicht über den Container hinausgeht */
 }
 
 nav {
