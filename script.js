@@ -1,7 +1,7 @@
 // Menü-Animation (Burger Menü)
 function toggleMenu() {
     const navMenu = document.getElementById('nav-menu');
-    navMenu.classList.toggle('open');
+    navMenu.classList.toggle('open'); // Toggle der Klasse für Animation
 }
 
 // Dark/Light Mode basierend auf den Systemeinstellungen
@@ -12,25 +12,33 @@ function applyTheme() {
 }
 
 // Lade diese Funktion bei Initialisierung
-document.addEventListener('DOMContentLoaded', applyTheme);
+document.addEventListener('DOMContentLoaded', () => {
+    applyTheme();
+
+    // Event-Listener für das Menü
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', toggleMenu);
+    }
+});
 
 // AJAX-Seitenwechsel mit Übergangsanimationen
-function loadPage(page) {
+async function loadPage(page) {
     const content = document.getElementById('content');
     content.classList.add('fade-out'); // Füge Fade-Out-Animation hinzu
 
-    setTimeout(() => {
-        fetch(page)  // Lade die neue Seite per AJAX
-            .then(response => response.text())
-            .then(data => {
-                content.innerHTML = extractContent(data); // Lade neuen Inhalt
-                content.classList.remove('fade-out');
-                content.classList.add('fade-in'); // Füge Fade-In-Animation hinzu
-            })
-            .catch(error => {
-                console.error("Fehler beim Laden der Seite:", error);
-                content.innerHTML = "<p>Fehler beim Laden der Seite.</p>";
-            });
+    setTimeout(async () => {
+        try {
+            const response = await fetch(page);  // Lade die neue Seite per AJAX
+            if (!response.ok) throw new Error('Netzwerkantwort war nicht ok');
+            const data = await response.text();
+            content.innerHTML = extractContent(data); // Lade neuen Inhalt
+            content.classList.remove('fade-out');
+            content.classList.add('fade-in'); // Füge Fade-In-Animation hinzu
+        } catch (error) {
+            console.error("Fehler beim Laden der Seite:", error);
+            content.innerHTML = "<p>Fehler beim Laden der Seite.</p>";
+        }
     }, 500); // Warte 500 ms, damit die Animation ablaufen kann
 }
 
