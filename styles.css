@@ -96,7 +96,6 @@ footer {
 
 /* Animationen */
 .fade-in {
-    opacity: 0;
     animation: fadeIn 0.5s forwards;
 }
 
