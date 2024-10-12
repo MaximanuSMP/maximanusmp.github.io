@@ -14,16 +14,15 @@ body {
     background-color: var(--background);
     color: var(--text);
     transition: background-color 0.5s ease, color 0.5s ease;
-    text-align: center; /* Text zentriert auf der ganzen Seite */
-    min-height: 100vh; /* Body bleibt mindestens so groß wie der Viewport */
+    text-align: center; /* Text auf der ganzen Seite zentrieren */
 }
 
 main {
     flex: 1; /* Nimmt den verbleibenden Platz zwischen Header und Footer ein */
     display: flex;
-    flex-direction: column; /* Inhalte im Main-Bereich vertikal anordnen */
-    justify-content: center; /* Horizontal zentrieren */
-    align-items: center; /* Vertikal zentrieren */
+    flex-direction: column; /* Inhalte vertikal anordnen */
+    justify-content: flex-start; /* Text oben positionieren */
+    align-items: center; /* Horizontal zentrieren */
     padding: 20px;
     box-sizing: border-box;
 }
@@ -70,7 +69,7 @@ a {
     text-decoration: none;
     color: var(--link);
     font-weight: bold;
-    transition: color 0.3s ease; /* Übergang für Link-Hover */
+    transition: color 0.3s ease;
 }
 
 a:hover {
@@ -112,15 +111,15 @@ footer {
 @media (max-width: 768px) {
     ul {
         flex-direction: column;
-        display: none; /* Menü ist standardmäßig versteckt */
+        display: none;
     }
 
     ul.open {
-        display: flex; /* Menü wird angezeigt, wenn es geöffnet ist */
+        display: flex;
     }
 
     .menu-toggle {
-        display: block; /* Zeige das Menü-Icon auf mobilen Geräten */
+        display: block;
     }
 }
 
