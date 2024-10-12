@@ -12,6 +12,7 @@ body {
     background-color: var(--background);
     color: var(--text);
     transition: background-color 0.5s ease, color 0.5s ease;
+    text-align: center; /* Zentriert den Text auf der ganzen Seite */
 }
 
 /* Haupt-Inhalt soll zentriert und den verbleibenden Platz einnehmen */
@@ -20,9 +21,9 @@ main {
     display: flex;
     justify-content: center; /* Horizontal zentrieren */
     align-items: center; /* Vertikal zentrieren */
-    text-align: center; /* Text zentrieren */
     padding: 20px;
     box-sizing: border-box;
+    text-align: center; /* Text im main-Container zentrieren */
 }
 
 /* Header Styling */
@@ -83,6 +84,7 @@ footer {
     transition: background-color 0.5s ease, color 0.5s ease;
     position: relative;
     width: 100%;
+    bottom: 0;
 }
 
 /* Animationen */
