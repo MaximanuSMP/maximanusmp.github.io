@@ -30,9 +30,9 @@ header {
     color: white;
 }
 
-header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+header .logo img {
+    height: 50px; /* Höhe des Logos */
+    width: auto; /* Sorgt für die proportionale Darstellung des Logos */
 }
 
 nav {
