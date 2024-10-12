@@ -1,0 +1,132 @@
+/* Basis-Layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--text);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--header-background);
+    color: var(--header-text);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+li {
+    margin: 0 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link);
+    font-weight: bold;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--footer-background);
+    color: var(--footer-text);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Animationen */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Burger-Menü für mobile Geräte */
+@media (max-width: 768px) {
+    ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    ul.open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Dark und Light Modus */
+:root {
+    --background: #fff;
+    --text: #000;
+    --header-background: #f8f9fa;
+    --header-text: #333;
+    --link: #0066cc;
+    --link-hover: #004499;
+    --footer-background: #f1f1f1;
+    --footer-text: #333;
+}
+
+[data-theme="dark"] {
+    --background: #121212;
+    --text: #f1f1f1;
+    --header-background: #1c1c1c;
+    --header-text: #fff;
+    --link: #3399ff;
+    --link-hover: #80bfff;
+    --footer-background: #1c1c1c;
+    --footer-text: #ccc;
+}
