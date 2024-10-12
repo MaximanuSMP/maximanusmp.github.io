@@ -27,34 +27,25 @@ main {
 
 header {
     display: flex;
-    justify-content: space-between; /* Abstand zwischen Logo und Menü */
+    justify-content: space-between; /* sorgt dafür, dass Logo und Menüknopf an den Rändern sind */
     align-items: center;
     padding: 10px 20px;
     background-color: var(--header-background);
     color: var(--header-text);
     transition: background-color 0.5s ease, color 0.5s ease;
+    position: relative; /* für das Menü */
 }
 
 .logo {
-    flex-grow: 1; /* Vergrößert den Logo-Bereich, um Platz für das Menü zu schaffen */
-}
-
-.logo img {
-    width: 50px;
-    height: auto;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    position: relative; /* Für das Menü */
+    display: flex; /* Flexbox aktivieren für zentrierte Ausrichtung */
+    align-items: center; /* vertikale Zentrierung */
 }
 
 .menu-toggle {
-    display: none; /* Standardmäßig verstecken */
+    display: none; /* Standardmäßig nicht sichtbar */
     font-size: 30px;
     cursor: pointer;
-    margin-left: auto; /* Schiebt den Menüknopf nach rechts */
+    margin-left: auto; /* sorgt dafür, dass der Menüknopf ganz rechts ist */
 }
 
 ul {
@@ -101,6 +92,7 @@ footer {
 
 /* Animationen */
 .fade-in {
+    opacity: 0;
     animation: fadeIn 0.5s forwards;
 }
 
@@ -126,7 +118,7 @@ footer {
     }
 
     .menu-toggle {
-        display: block; /* Menüknopf auf mobilen Geräten anzeigen */
+        display: block;
     }
 }
 
