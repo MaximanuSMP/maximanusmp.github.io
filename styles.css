@@ -1,5 +1,6 @@
+/* Basis-Layout */
 html, body {
-    height: 100%; /* Vollständige Höhe beibehalten */
+    height: 100%; /* HTML und Body füllen die volle Höhe */
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,27 +14,135 @@ body {
     background-color: var(--background);
     color: var(--text);
     transition: background-color 0.5s ease, color 0.5s ease;
-    text-align: center; /* Text auf der ganzen Seite zentrieren */
-    min-height: 100vh; /* Mindesthöhe auf volle Ansichtshöhe setzen */
+    text-align: center; /* Text zentriert auf der ganzen Seite */
+    min-height: 100vh; /* Body bleibt mindestens so groß wie der Viewport */
 }
 
 main {
     flex: 1; /* Nimmt den verbleibenden Platz zwischen Header und Footer ein */
     display: flex;
+    flex-direction: column; /* Inhalte im Main-Bereich vertikal anordnen */
     justify-content: center; /* Horizontal zentrieren */
     align-items: center; /* Vertikal zentrieren */
     padding: 20px;
     box-sizing: border-box;
-    text-align: center; /* Text im main-Container zentrieren */
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--header-background);
+    color: var(--header-text);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+li {
+    margin: 0 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link);
+    font-weight: bold;
+    transition: color 0.3s ease; /* Übergang für Link-Hover */
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 10px 0;
     background-color: var(--footer-background);
     color: var(--footer-text);
     transition: background-color 0.5s ease, color 0.5s ease;
-    position: relative; /* Stelle sicher, dass der Footer unten bleibt */
+    margin-top: auto; /* Footer bleibt am Ende der Seite */
     width: 100%;
-    margin-top: auto; /* Ermöglicht dem Footer, am Ende des flex-Containers zu bleiben */
+}
+
+/* Animationen */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Mobile Ansicht */
+@media (max-width: 768px) {
+    ul {
+        flex-direction: column;
+        display: none; /* Menü ist standardmäßig versteckt */
+    }
+
+    ul.open {
+        display: flex; /* Menü wird angezeigt, wenn es geöffnet ist */
+    }
+
+    .menu-toggle {
+        display: block; /* Zeige das Menü-Icon auf mobilen Geräten */
+    }
+}
+
+/* Dark und Light Modus */
+:root {
+    --background: #fff;
+    --text: #000;
+    --header-background: #f8f9fa;
+    --header-text: #333;
+    --link: #0066cc;
+    --link-hover: #004499;
+    --footer-background: #f1f1f1;
+    --footer-text: #333;
+}
+
+[data-theme="dark"] {
+    --background: #121212;
+    --text: #f1f1f1;
+    --header-background: #1c1c1c;
+    --header-text: #fff;
+    --link: #3399ff;
+    --link-hover: #80bfff;
+    --footer-background: #1c1c1c;
+    --footer-text: #ccc;
 }
