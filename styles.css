@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    height: 100%;
     font-family: Arial, sans-serif;
     transition: background-color 0.3s, color 0.3s;
     background-color: var(--background-color);
@@ -31,9 +32,9 @@ header {
 }
 
 header .logo img {
-    max-height: 80px; /* Höchstgrenze für die Höhe des Logos (angepasst) */
-    width: auto; /* Erhält das Seitenverhältnis */
-    max-width: 100%; /* Stellt sicher, dass das Bild nicht über den Container hinausgeht */
+    max-height: 80px; /* Höchstgrenze für die Höhe des Logos */
+    width: auto;
+    max-width: 100%;
 }
 
 nav {
@@ -65,8 +66,8 @@ nav ul li a:hover {
 
 main {
     padding: 2rem;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    /* Hiermit fügen wir unten Platz hinzu, damit der Inhalt nicht mit dem Footer kollidiert */
+    padding-bottom: 100px; /* Platz für den Footer */
 }
 
 footer {
@@ -74,6 +75,11 @@ footer {
     padding: 1rem;
     background: #007bff;
     color: white;
+    /* Footer bleibt immer am unteren Rand des Bildschirms */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 /* Responsive Menu */
