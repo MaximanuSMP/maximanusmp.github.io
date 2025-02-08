@@ -20,7 +20,7 @@
         <!-- Server-IP Bereich mit Kopierfunktion -->
         <div class="mt-4">
             <h3>🔗 Server-IP:</h3>
-            <p id="server-ip" class="fw-bold">twsmp.maximanu.de</p>
+            <p id="server-ip" class="fw-bold">mc.maximanu.de / play.maximanu.de</p>
             <button id="copyIP" class="btn btn-success">
                 <i class="bi bi-clipboard"></i> IP kopieren
             </button>
@@ -80,7 +80,7 @@
     <!-- Server-Status & IP-Kopierfunktion -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const serverIP = "twsmp.maximanu.de"; // Deine echte Server-IP hier eintragen!
+            const serverIP = "mc.maximanu.de"; // Deine echte Server-IP hier eintragen!
             const statusUrl = `https://api.mcsrvstat.us/2/${serverIP}`;
 
             fetch(statusUrl)
