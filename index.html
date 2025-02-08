@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Startseite - Toudward SMP</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+
+    <div data-include="/components/header.html"></div>
+
+    <main class="container my-5 text-center">
+        <h1>Willkommen auf Toudward SMP</h1>
+        <p class="lead">Tauche ein in die spannende Welt von Toudward SMP – dein Minecraft-Survival-Server mit einer großartigen Community!</p>
+
+        <!-- Server-IP Bereich mit Kopierfunktion -->
+        <div class="mt-4">
+            <h3>🔗 Server-IP:</h3>
+            <p id="server-ip" class="fw-bold">twsmp.maximanu.de</p>
+            <button id="copyIP" class="btn btn-success">
+                <i class="bi bi-clipboard"></i> IP kopieren
+            </button>
+        </div>
+
+        <!-- Server-Status Bereich -->
+        <div id="server-status" class="mt-4">
+            <h3>📡 Server-Status:</h3>
+            <p>Spieler online: <span id="player-count">Lade…</span></p>
+            <p>MOTD: <span id="motd">Lade…</span></p>
+            <img id="server-icon" src="" alt="Server Icon" style="display: none; width: 64px; height: 64px;">
+        </div>
+
+        <!-- Über den Server -->
+        <div class="mt-5">
+            <h2>🌍 Was erwartet dich?</h2>
+            <p>Unser Server bietet dir ein einzigartiges Minecraft-Survival-Erlebnis mit spannenden Features:</p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="bi bi-hammer"></i> **Survival mit Economy & Jobs** – Verdiene Geld und baue dein eigenes Imperium!</li>
+                <li class="list-group-item"><i class="bi bi-shield-lock"></i> **Grief-Schutz** – Sichere deine Builds gegen andere Spieler.</li>
+                <li class="list-group-item"><i class="bi bi-people"></i> **Eine aktive Community** – Treffe neue Freunde und erlebe Abenteuer!</li>
+                <li class="list-group-item"><i class="bi bi-boxes"></i> **Custom Items & Plugins** – Neue Features und Möglichkeiten für dein Gameplay.</li>
+            </ul>
+        </div>
+
+        <!-- Regeln & Features -->
+        <div class="mt-5">
+            <h2>📜 Regeln</h2>
+            <p>Damit jeder Spaß hat, gibt es ein paar einfache Regeln:</p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="bi bi-exclamation-triangle"></i> **Kein Griefing** – Respektiere die Builds anderer Spieler.</li>
+                <li class="list-group-item"><i class="bi bi-chat-dots"></i> **Freundlicher Umgang** – Beleidigungen und toxisches Verhalten sind verboten.</li>
+                <li class="list-group-item"><i class="bi bi-hammer"></i> **Kein Hacking oder Cheating** – Fair Play steht an erster Stelle.</li>
+                <li class="list-group-item"><i class="bi bi-shop-window"></i> **Handel nur über sichere Methoden** – Scamming ist nicht erlaubt.</li>
+            </ul>
+            <a href="/rules/" class="btn btn-primary">
+                <i class="bi bi-book"></i> Zu alle  Regeln
+            </a>
+        </div>
+
+        <!-- Kontakt & Discord -->
+        <div class="mt-5">
+            <h2>📞 Unser Discord-Server</h2>
+            <p>Hast du Fragen oder möchtest du der Community beitreten? Schau auf unserem Discord vorbei!</p>
+            <a href="https://discord.gg/dein-server" class="btn btn-primary">
+                <i class="bi bi-discord"></i> Discord beitreten
+            </a>
+        </div>
+    </main>
+
+    <div data-include="/components/footer.html"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+
+    <!-- Server-Status & IP-Kopierfunktion -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const serverIP = "twsmp.maximanu.de"; // Deine echte Server-IP hier eintragen!
+            const statusUrl = `https://api.mcsrvstat.us/2/${serverIP}`;
+
+            fetch(statusUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.online) {
+                        document.getElementById("player-count").textContent = data.players.online;
+                        document.getElementById("motd").innerHTML = data.motd.html.join("<br>");
+
+                        if (data.icon) {
+                            document.getElementById("server-icon").src = data.icon;
+                            document.getElementById("server-icon").style.display = "block";
+                        }
+                    } else {
+                        document.getElementById("player-count").textContent = "Offline";
+                        document.getElementById("motd").textContent = "Server nicht erreichbar.";
+                    }
+                })
+                .catch(error => {
+                    console.error("Fehler beim Laden des Server-Status:", error);
+                    document.getElementById("player-count").textContent = "Fehler";
+                    document.getElementById("motd").textContent = "Fehler beim Abrufen.";
+                });
+
+            // IP-Kopieren Funktion
+            document.getElementById("copyIP").addEventListener("click", function () {
+                navigator.clipboard.writeText(serverIP).then(() => {
+                    alert("Server-IP wurde in die Zwischenablage kopiert: " + serverIP);
+                }).catch(err => {
+                    console.error("Fehler beim Kopieren der IP:", err);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
