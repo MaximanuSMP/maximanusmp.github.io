@@ -17,7 +17,7 @@
         <h1>Willkommen auf der Website von Maximanu SMP!</h1>
         <p class="lead">Tauche ein in die spannende Welt von Maximanu SMP – dein Minecraft-Survival-Server mit einer großartigen Community!</p>
 
-        <div class="mt-4 text-danger-emphasis">
+        <div class="mt-4 text-danger">
         <h2>🚨 Wichtiger Hinweis:</h2>
         <h3>Der Minecraft-Server wird voraussichtlich am 22. Februar 2025 als Beta Test online gehen. 🥳</h3>
         <p>(Das Datum des entgültigen Release ist noch unbekannt!)</p>
@@ -30,14 +30,6 @@
             <button id="copyIP" class="btn btn-success">
                 <i class="bi bi-clipboard"></i> IP kopieren
             </button>
-        </div>
-
-        <!-- Server-Status Bereich -->
-        <div id="server-status" class="mt-4">
-            <h3>📡 Server-Status:</h3>
-            <p>Spieler online: <span id="player-count">Lade…</span></p>
-            <p>MOTD: <span id="motd">Lade…</span></p>
-            <img id="server-icon" src="" alt="Server Icon" style="display: none; width: 64px; height: 64px;">
         </div>
 
         <!-- Über den Server -->
@@ -87,45 +79,5 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="/js/script.js"></script>
-
-    <!-- Server-Status & IP-Kopierfunktion -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const serverIP = "mc.maximanu.de"; // Deine echte Server-IP hier eintragen!
-            const statusUrl = `https://api.mcsrvstat.us/3/${serverIP}`;
-
-            fetch(statusUrl)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.online) {
-                        document.getElementById("player-count").textContent = data.players.online;
-                        document.getElementById("motd").innerHTML = data.motd.html.join("<br>");
-
-                        if (data.icon) {
-                            document.getElementById("server-icon").src = data.icon;
-                            document.getElementById("server-icon").style.display = "block";
-                        }
-                    } else {
-                        document.getElementById("player-count").textContent = "Offline";
-                        document.getElementById("motd").textContent = "Server nicht erreichbar.";
-                    }
-                })
-                .catch(error => {
-                    console.error("Fehler beim Laden des Server-Status:", error);
-                    document.getElementById("player-count").textContent = "Fehler";
-                    document.getElementById("motd").textContent = "Fehler beim Abrufen.";
-                });
-
-            // IP-Kopieren Funktion
-            document.getElementById("copyIP").addEventListener("click", function () {
-                navigator.clipboard.writeText(serverIP).then(() => {
-                    alert("Server-IP wurde in die Zwischenablage kopiert: " + serverIP);
-                }).catch(err => {
-                    console.error("Fehler beim Kopieren der IP:", err);
-                });
-            });
-        });
-    </script>
-
 </body>
 </html>
