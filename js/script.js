@@ -13,12 +13,11 @@ async function includeHTML() {
 }
 includeHTML();
 
-            // IP-Kopieren Funktion
-            document.getElementById("copyIP").addEventListener("click", function () {
-                navigator.clipboard.writeText(serverIP).then(() => {
-                    alert("Server-IP wurde in die Zwischenablage kopiert: " + serverIP);
-                }).catch(err => {
-                    console.error("Fehler beim Kopieren der IP-Adresse:", err);
-                });
+        function copyIP() {
+            const ip = "mc.example.com"; // Ersetze mit deiner Server-IP
+            navigator.clipboard.writeText(ip).then(() => {
+                alert("Minecraft Server IP kopiert: " + ip);
+            }).catch(err => {
+                console.error('Fehler beim Kopieren: ', err);
             });
-        });
+        }
