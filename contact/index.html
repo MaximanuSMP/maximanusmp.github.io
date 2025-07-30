@@ -1,67 +1,68 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kontakt - Maximanu SMP</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JeroMC – Kontakt</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+  <div id="header-placeholder"></div>
+  
+  <main class="container text-center py-5">
+    <h1 class="mb-4 text-center">📬 Kontakt</h1>
+    <p class="text-center mb-5">
+      Du möchtest mit uns in Kontakt treten? Hier findest du alle wichtigen Wege, uns zu erreichen.
+    </p>
 
-    <div data-include="/components/header.html"></div>
+    <div class="row g-4">
 
-    <main class="container my-5 text-center">
-<!-- Kontaktinformationen -->
-<div class="container text-center mt-5">
-    <h2>Kontakt</h2>
-    <p class="lead">So erreichsen sie uns.</p>
-
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="d-grid gap-3">
-
-                <!-- Discord -->
-                <a href="https://discord.gg/kQCqpT25Qt" target="_blank" class="btn btn-primary btn-lg">
-                    <i class="bi bi-discord"></i> Discord beitreten
-                </a>
-
-                <!-- E-Mail -->
-                <a href="mailto:maxi@maximanu.de" class="btn btn-success btn-lg">
-                    <i class="bi bi-envelope-at-fill"></i> E-Mail Support
-                </a>
-
-                <!-- Instagram -->
-                <a href="https://instagram.com" target="_blank" class="btn btn-danger btn-lg">
-                    <i class="bi bi-instagram"></i> Instagram (Nicht verfügbar)
-                </a>
-
-                <!-- Twitter (X) -->
-                <a href="https://x.com" target="_blank" class="btn btn-info btn-lg">
-                    <i class="bi bi-twitter-x"></i> Twitter (X) (Nicht verfügbar)
-                </a>
-
-                <!-- YouTube -->
-                <a href="https://youtube.com/@xxmaximanuxx" target="_blank" class="btn btn-danger btn-lg">
-                    <i class="bi bi-youtube"></i> YouTube
-                </a>
-                
-                <!-- TikTok -->
-                <a href="https://www.tiktok.com/@xxmaximanuxx" target="_blank" class="btn btn-dark btn-lg">
-                    <i class="bi bi-tiktok"></i> TikTok
-                </a>
-
-            </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-envelope-fill display-5 text-primary mb-3"></i>
+            <h5 class="card-title">E-Mail</h5>
+            <p class="card-text">support@jeromc.de</p>
+            <a href="mailto:support@jeromc.de" class="btn btn-outline-primary btn-sm">
+              <i class="bi bi-send"></i> E-Mail senden
+            </a>
+          </div>
         </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-discord display-5 text-purple mb-3"></i>
+            <h5 class="card-title">Discord</h5>
+            <p class="card-text">Tritt unserem Discord bei.</p>
+            <a href="https://discord.gg/DEININVITE" target="_blank" class="btn btn-outline-secondary btn-sm">
+              <i class="bi bi-discord"></i> Zum Discord
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-controller display-5 text-success mb-3"></i>
+            <h5 class="card-title">Ingame</h5>
+            <p class="card-text">Sprich ein Teammitglied direkt auf dem Server an.</p>
+            <span class="badge bg-success">mc.jeromc.de</span>
+          </div>
+        </div>
+      </div>
+
     </div>
-</div>
-    </main>
-
-    <div data-include="/components/footer.html"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="/js/script.js"></script>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
