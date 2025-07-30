@@ -1,133 +1,159 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Wiki - Maximanu SMP</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="icon" type="image/x-icon" href="/afavicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JeroMC – Wiki</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
+  <div id="header-placeholder"></div>
+  
+  <main class="container py-5">
+    <h1 class="mb-4 text-center"><i class="bi bi-book-half"></i> JeroMC Wiki</h1>
 
-    <div data-include="/components/header.html"></div>
-
-  <!-- Hauptinhalt -->
-  <main class="container my-5">
-    <h1 class="text-center mb-4">Wiki</h1>
-    <p class="lead text-center">Willkommen im offiziellen Wiki unseres Minecraft-Servers. Hier findest du alle Informationen zu Gameplay, Rängen, Bauanleitungen, Wirtschaft und vielem mehr.</p>
-    
-    <!-- Inhaltsverzeichnis -->
-    <nav class="my-4">
-      <h2>Inhaltsverzeichnis</h2>
+    <nav aria-label="Inhaltsverzeichnis" class="mb-4">
+      <h5>Inhaltsverzeichnis</h5>
       <ul class="list-group">
-        <li class="list-group-item"><a href="#einleitung">Einleitung</a></li>
-        <li class="list-group-item"><a href="#server-overview">Server Features</a></li>
-        <li class="list-group-item"><a href="#survival">Survival Gameplay</a></li>
-        <li class="list-group-item"><a href="#ranks">Server Ränge &amp; Verantwortlichkeiten</a></li>
-        <li class="list-group-item"><a href="#bauwirtschaft">Bauen &amp; Wirtschaft</a></li>
-        <li class="list-group-item"><a href="#events">Events &amp; Community</a></li>
+        <li class="list-group-item"><a href="#serverbeitritt">Wie man dem Server beitritt</a></li>
+        <li class="list-group-item"><a href="#survival">Survival</a></li>
+        <li class="list-group-item"><a href="#lifesteal">Lifesteal</a></li>
+        <li class="list-group-item"><a href="#creative">Creative</a></li>
+        <li class="list-group-item"><a href="#kitpvp">KitPvP</a></li>
+        <li class="list-group-item"><a href="#duels">Duels</a></li>
+        <li class="list-group-item"><a href="#minigames">Minigames</a></li>
         <li class="list-group-item"><a href="#faq">FAQ</a></li>
       </ul>
     </nav>
-    
-    <!-- Einleitung -->
-    <section id="einleitung" class="mb-5">
-      <h2>Einleitung</h2>
-      <p>Willkommen auf unserem Survival-Server! Unser Ziel ist es, eine faire und lebendige Community zu fördern, in der sowohl Neueinsteiger als auch erfahrene Spieler spannende Abenteuer erleben können. Dieses Wiki soll dir helfen, dich schnell zurechtzufinden und das Beste aus deinem Spielerlebnis herauszuholen.</p>
+
+    <!-- Inhalt -->
+
+    <section id="serverbeitritt" class="mb-5">
+      <h2><i class="bi bi-box-arrow-in-right"></i> Wie man dem Server beitritt</h2>
+      <p>
+        Um dem JeroMC Netzwerk beizutreten, starte Minecraft, klicke auf „Multiplayer“ und füge folgenden Server hinzu:
+      </p>
+      <pre class="bg-light p-3 rounded">play.maximanu.de</pre>
+      <p>Danach kannst du direkt dem Server beitreten und loslegen!</p>
     </section>
-    
-    <!-- Server Overview -->
-    <section id="server-overview" class="mb-5">
-      <h2>Server Features</h2>
-      <p>Unser Server bietet eine authentische Survival-Erfahrung mit zahlreichen Features:</p>
-      <ul>
-        <li><strong>Wirtschaftssystem:</strong> Eigene Währungen, Shops und Handelssysteme.</li>
-        <li><strong>Schutzsystem:</strong> Landclaim, Anti-Griefing-Maßnahmen und Sicherheitsbereiche.</li>
-        <li><strong>Community Events:</strong> Regelmäßige Wettbewerbe, Bauwettbewerbe und Turniere.</li>
-        <li><strong>Rangsystem:</strong> Unterschiedliche Ränge mit individuellen Befugnissen und Vorteilen.</li>
-      </ul>
-    </section>
-    
-    <!-- Survival Gameplay -->
+
+<section id="ranks" class="mb-5">
+  <h2><i class="bi bi-award-fill"></i> Ränge</h2>
+  <p>Unsere Ränge von höchster bis niedrigster Hierarchie:</p>
+
+  <ul class="list-group">
+    <li class="list-group-item d-flex align-items-center">
+      <i class="bi bi-shield-lock-fill text-danger me-3 fs-4"></i>
+      <strong>Owner</strong> – Der Besitzer und Hauptverantwortliche des Netzwerks.
+    </li>
+    <li class="list-group-item d-flex align-items-center">
+      <i class="bi bi-person-check-fill text-danger me-3 fs-4"></i>
+      <strong>Co-Owner</strong> – Stellvertretender Besitzer mit umfassenden Rechten.
+    </li>
+    <li class="list-group-item d-flex align-items-center">
+      <i class="bi bi-gear-fill text-warning me-3 fs-4"></i>
+      <strong>Manager</strong> – Verantwortlich für Organisation und Teamleitung.
+    </li>
+    <li class="list-group-item d-flex align-items-center">
+      <i class="bi bi-person-badge-fill text-warning me-3 fs-4"></i>
+      <strong>Admin</strong> – Server-Administrator mit erweiterten Befugnissen.
+    </li>
+    <li class="list-group-item d-flex align-items-center">
+      <i class="bi bi-code-slash text-info me-3 fs-4"></i>
+      <strong>Developer</strong> – Entwickler und Programmierer des Netzwerks.
+    </li>
+    <li class="list-group-item d-flex align-items-center">
+      <i class="bi bi-person-lines-fill text-primary me-3 fs-4"></i>
+      <strong>Moderator</strong> – Moderiert den Chat und überwacht das Spielerverhalten.
+    </li>
+    <li class="list-group-item d-flex align-items-center">
+      <i class="bi bi-star-fill text-success me-3 fs-4"></i>
+      <strong>Supporter</strong> – Hilft Spielern bei Problemen und Fragen.
+    </li>
+    <li class="list-group-item d-flex align-items-center">
+      <i class="bi bi-life-preserver text-success me-3 fs-4"></i>
+      <strong>Helper</strong> – Unterstützt das Team und neue Spieler.
+    </li>
+    <li class="list-group-item d-flex align-items-center">
+      <i class="bi bi-hammer text-secondary me-3 fs-4"></i>
+      <strong>Builder</strong> – Verantwortlich für den Bau von Welten und Landschaften.
+    </li>
+    <li class="list-group-item d-flex align-items-center">
+      <i class="bi bi-pencil-fill text-secondary me-3 fs-4"></i>
+      <strong>Creator</strong> – Kreative Designer und Content-Ersteller.
+    </li>
+    <li class="list-group-item d-flex align-items-center">
+      <i class="bi bi-gem text-warning me-3 fs-4"></i>
+      <strong>Premium</strong> – Unterstützer mit besonderen Vorteilen.
+    </li>
+    <li class="list-group-item d-flex align-items-center">
+      <i class="bi bi-person-fill text-muted me-3 fs-4"></i>
+      <strong>Spieler</strong> – Alle regulären Spieler im Netzwerk.
+    </li>
+  </ul>
+</section>
+      
     <section id="survival" class="mb-5">
-      <h2>Survival Gameplay</h2>
-      <p>Der Survival-Modus stellt dich vor vielfältige Herausforderungen. Hier einige grundlegende Tipps und Hinweise:</p>
-      <ol>
-        <li><strong>Ressourcen sammeln:</strong> Beginne mit dem Abbau von Holz, Steinen und Nahrung. Ein guter Start ist essenziell!</li>
-        <li><strong>Sicheres Zuhause bauen:</strong> Errichte so früh wie möglich eine Basis, um dich vor Monstern zu schützen.</li>
-        <li><strong>Erkunden:</strong> Wage dich in die Welt hinaus, aber achte stets auf Gefahren wie Creeper, Zombies und andere feindliche Mobs.</li>
-        <li><strong>Handel und Wirtschaft:</strong> Nutze das interne Handelssystem, um Ressourcen zu tauschen oder zu verkaufen.</li>
-      </ol>
-      <p>Je mehr du spielst, desto mehr lernst du – sowohl über die Spielmechaniken als auch über clevere Überlebensstrategien.</p>
+      <h2><i class="bi bi-tree-fill"></i> Survival</h2>
+      <p>
+        Im Survival-Modus baust du deine Welt auf, kämpfst gegen Monster und kannst dich mit Freunden verbünden. Ressourcen sammeln, bauen und überleben – genau wie klassisches Minecraft.
+      </p>
     </section>
-    
-    <!-- Server Ränge & Verantwortlichkeiten -->
-    <section id="ranks" class="mb-5">
-      <h2>Server Ränge &amp; Verantwortlichkeiten</h2>
-      <p>Um unseren Server reibungslos und fair zu verwalten, haben wir ein Rangsystem etabliert. Jeder Rang hat spezielle Rechte und Pflichten:</p>
-      
-      <h3>Owner</h3>
-      <p><strong>Verantwortlichkeiten:</strong> Der Serverbetreiber, der alle Entscheidungen trifft, Updates plant und die langfristige Vision des Servers umsetzt. Uneingeschränkte Rechte.</p>
-      
-      <h3>Admin</h3>
-      <p><strong>Verantwortlichkeiten:</strong> Technische Verwaltung, Plugin-Management und Problemlösung. Admins überwachen den Serverbetrieb und setzen Anweisungen des Owners um.</p>
-      
-      <h3>Moderator</h3>
-      <p><strong>Verantwortlichkeiten:</strong> Überwachung des Chats und der Community, Regelverstöße ahnden und Konflikte moderieren. Moderatoren sorgen für ein angenehmes Miteinander.</p>
-      
-      <h3>Supporter</h3>
-      <p><strong>Verantwortlichkeiten:</strong> Unterstützung der Spieler bei technischen Fragen und Problemen. Sie fungieren als Bindeglied zwischen den Spielern und dem Moderationsteam.</p>
-      
-      <h3>Helper</h3>
-      <p><strong>Verantwortlichkeiten:</strong> Erste Anlaufstelle für Hilfe und Support im Spiel. Helper geben Tipps und unterstützen bei alltäglichen Herausforderungen.</p>
-      
-      <h3>YouTube / Twitch</h3>
-      <p><strong>Verantwortlichkeiten:</strong> Erstellung von YouTube Videos oder streaming auf Twitch.</p>
-      
-      <h3>VIP+ und VIP</h3>
-      <p><strong>Verantwortlichkeiten:</strong> Diese Ränge sind für Spieler, die den Server besonders unterstützen oder durch besondere Leistungen hervorgestochen sind. Sie erhalten exklusive Vorteile und Rechte – VIP+ mit erweiterten Privilegien im Vergleich zu VIP.</p>
+
+    <section id="lifesteal" class="mb-5">
+      <h2><i class="bi bi-heart-fill text-danger"></i> Lifesteal</h2>
+      <p>
+        Im Lifesteal-Modus kämpfst du gegen andere Spieler. Für jeden Kill erhältst du ein zusätzliches Herz – aber sei vorsichtig, du kannst auch wieder Herzen verlieren verlieren!
+      </p>
     </section>
-    
-    <!-- Bauen & Wirtschaft -->
-    <section id="bauwirtschaft" class="mb-5">
-      <h2>Bauen &amp; Wirtschaft</h2>
-      <p>Der kreative Aspekt und die wirtschaftlichen Aktivitäten spielen eine zentrale Rolle auf unserem Server:</p>
-      <ul>
-        <li><strong>Landclaim:</strong> Schütze dein Grundstück vor unbefugtem Zugriff. Nutze unser Claim-System, um deine Bauwerke abzusichern.</li>
-        <li><strong>Handelssystem:</strong> Tausche Ressourcen und Items in unseren Märkten. Investiere in den Serverhandel und profitiere von gut geplanten Deals.</li>
-        <li><strong>Stadtbauprojekte:</strong> Schließe dich anderen Spielern zusammen, um Gemeinschaftsprojekte zu starten – von kleinen Dörfern bis zu großen Städten.</li>
-      </ul>
+
+    <section id="creative" class="mb-5">
+      <h2><i class="bi bi-brush-fill"></i> Creative</h2>
+      <p>
+        Hier kannst du deiner Kreativität freien Lauf lassen: Unbegrenzte Ressourcen, freier Flug und keine Gegner – perfekt zum Bauen und Erfinden.
+      </p>
     </section>
-    
-    <!-- Events & Community -->
-    <section id="events" class="mb-5">
-      <h2>Events &amp; Community</h2>
-      <p>Regelmäßige Events und ein aktives Community-Leben sind wesentliche Bestandteile unseres Servers:</p>
-      <ul>
-        <li><strong>Bau-Wettbewerbe:</strong> Stelle dein Können unter Beweis und gewinne Preise.</li>
-        <li><strong>PvP-Turniere:</strong> Tritt gegen andere Spieler in spannenden Duellen an.</li>
-        <li><strong>Schatzsuchen:</strong> Nimm an Schatzsuchen teil und entdecke versteckte Belohnungen.</li>
-        <li><strong>Community-Abende:</strong> Gemeinsame Bauprojekte oder Minispiele fördern den Zusammenhalt.</li>
-      </ul>
+
+    <section id="kitpvp" class="mb-5">
+      <h2><i class="bi bi-bullseye"></i> KitPvP</h2>
+      <p>
+        Kämpfe mit verschiedenen Kits und Fähigkeiten. Verbessere deine Ausrüstung und dominiere das Spielfeld!
+      </p>
     </section>
-    
-    <!-- FAQ -->
+
+    <section id="duels" class="mb-5">
+      <h2><i class="bi bi-people-fill"></i> Duels</h2>
+      <p>
+        Fordere andere Spieler zu 1-gegen-1 Duellen heraus. Trainiere deine Fähigkeiten und verbessere deine Technik.
+      </p>
+    </section>
+
+    <section id="minigames" class="mb-5">
+      <h2><i class="bi bi-controller"></i> Minigames</h2>
+      <p>
+        Neben den großen Modi bieten wir auch verschiedene spaßige Minispiele an – perfekt für zwischendurch oder mit Freunden.
+      </p>
+    </section>
+
     <section id="faq" class="mb-5">
-      <h2>FAQ</h2>
-      <h3>Wie starte ich auf dem Server?</h3>
-      <p>Verbinde dich einfach mit der offiziellen Server-IP und folge den Anweisungen im Wiki.</p>
-      <h3>Was mache ich, wenn ich Hilfe benötige?</h3>
-      <p>Wende dich an einen Helper oder Supporter im Chat oder über unseren Discord-Server.</p>
-      <h3>Wie kann ich an Events teilnehmen?</h3>
-      <p>Alle Events werden im Forum und Discord angekündigt. Halte Ausschau nach entsprechenden Nachrichten und Terminen.</p>
+      <h2><i class="bi bi-question-circle"></i> FAQ</h2>
+      <h5>Wie alt muss ich sein, um auf JeroMC zu spielen?</h5>
+      <p>Mindestens 13 Jahre alt (oder mit Erlaubnis der Eltern).</p>
+
+      <h5>Gibt es Regeln für den Chat und Voicechat?</h5>
+      <p>Ja, keine Beleidigungen, kein Spam, und respektvolles Verhalten wird erwartet.</p>
+
+      <h5>Wie kann ich mich beim Support melden?</h5>
+      <p>Du kannst uns über Discord oder per E-Mail kontaktieren (siehe Kontakt-Seite).</p>
     </section>
   </main>
-
-    <div data-include="/components/footer.html"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="/js/script.js"></script>
+  
+  <div id="footer-placeholder"></div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="/assets/js/script.js"></script>
 </body>
 </html>
