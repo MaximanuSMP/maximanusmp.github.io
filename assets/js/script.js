@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const copyBtn = document.getElementById('copy-ip-btn');
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText('play.jeromc.de').then(() => {
+      navigator.clipboard.writeText('play.maximanu.de').then(() => {
         copyBtn.innerHTML = '<i class="bi bi-check-lg"></i> Kopiert!';
         setTimeout(() => {
           copyBtn.innerHTML = '<i class="bi bi-clipboard"></i> Kopieren';
