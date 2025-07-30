@@ -1,24 +1,14 @@
-    /* Automatisch den Dark Mode aktivieren, wenn das System es bevorzugt */
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #121212 !important;
-        color: #e0e0e0 !important;
-      }
-      
-      /* Beispiel: Angepasste Navbar im Dark Mode */
-      .navbar {
-        background-color: #333 !important;
-      }
-      
-      /* Beispiel: Buttons im Dark Mode */
-      .btn-primary {
-        background-color: #444 !important;
-        border-color: #555 !important;
-      }
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+}
 
-      .list-group-item {
-        background-color: #1e1e1e !important;
-        color: #e0e0e0 !important;
-        border-color: #333 !important;
-      }
-    }
+[data-theme='dark'] {
+  --bg: #121212;
+  --text: #eeeeee;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
