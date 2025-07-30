@@ -1,14 +1,55 @@
-:root {
-  --bg: #ffffff;
-  --text: #000000;
-}
-
-[data-theme='dark'] {
-  --bg: #121212;
-  --text: #eeeeee;
-}
-
+/* === Globales Layout === */
 body {
-  background-color: var(--bg);
-  color: var(--text);
+  font-family: system-ui, sans-serif;
+  transition: background-color 0.2s, color 0.2s;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+code {
+  user-select: all;
+}
+
+/* === Light Theme (Bootstrap Standard) === */
+[data-bs-theme="light"] {
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #212529;
+  --bs-card-bg: #f8f9fa;
+  --bs-border-color: #dee2e6;
+  --bs-link-color: #0d6efd;
+  --bs-btn-bg: #0d6efd;
+  --bs-btn-color: #ffffff;
+}
+
+/* === Dark Theme === */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #121212;
+  --bs-body-color: #e9ecef;
+  --bs-card-bg: #1e1e1e;
+  --bs-border-color: #444;
+  --bs-link-color: #63d471;
+  --bs-btn-bg: #198754;
+  --bs-btn-color: #ffffff;
+}
+
+/* === Cards === */
+.card {
+  background-color: var(--bs-card-bg);
+  color: var(--bs-body-color);
+  border: 1px solid var(--bs-border-color);
+}
+
+/* === Buttons === */
+.btn {
+  transition: all 0.2s ease-in-out;
+}
+
+/* IP-Kasten */
+#server-ip {
+  color: var(--bs-body-color);
+}
+
+.bg-light {
+  background-color: var(--bs-card-bg) !important;
+  color: var(--bs-body-color) !important;
 }
