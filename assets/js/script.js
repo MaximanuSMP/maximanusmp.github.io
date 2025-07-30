@@ -1,56 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Header & Footer laden
+  fetch('components/header.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('header-placeholder').innerHTML = html);
 
-  // Header und Footer laden
-  async function loadComponent(id, url) {
-    try {
-      const resp = await fetch(url);
-      if (resp.ok) {
-        document.getElementById(id).innerHTML = await resp.text();
-      } else {
-        console.error(`Fehler beim Laden von ${url}: ${resp.status}`);
-      }
-    } catch (err) {
-      console.error(`Fetch-Error: ${err}`);
-    }
-  }
-  loadComponent('header-placeholder', 'components/header.html');
-  loadComponent('footer-placeholder', 'components/footer.html');
+  fetch('components/footer.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('footer-placeholder').innerHTML = html);
 
-  // IP kopieren Funktion
+  // IP-Kopie-Button
   const copyBtn = document.getElementById('copy-ip-btn');
   if (copyBtn) {
-    const ipText = document.getElementById('server-ip').textContent.trim();
-
     copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText(ipText).then(() => {
+      navigator.clipboard.writeText('play.jeromc.de').then(() => {
         copyBtn.innerHTML = '<i class="bi bi-check-lg"></i> Kopiert!';
-        copyBtn.classList.remove('btn-outline-primary');
-        copyBtn.classList.add('btn-success');
         setTimeout(() => {
           copyBtn.innerHTML = '<i class="bi bi-clipboard"></i> Kopieren';
-          copyBtn.classList.remove('btn-success');
-          copyBtn.classList.add('btn-outline-primary');
         }, 2000);
-      }).catch(() => {
-        alert('Kopieren fehlgeschlagen. Bitte manuell kopieren.');
       });
     });
   }
 
-  // Dark / Light Mode automatisch an System anpassen
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-  }
-
-  // Prüfe Systempräferenz
+  // Dark/Light Mode automatisch setzen
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+  const setTheme = (isDark) => {
+    document.documentElement.setAttribute('data-bs-theme', isDark ? 'dark' : 'light');
+  };
 
-  // Initial setzen
-  applyTheme(prefersDark.matches ? 'dark' : 'light');
+  // Initiales Setzen
+  setTheme(prefersDark.matches);
 
-  // Auf Änderungen lauschen
-  prefersDark.addEventListener('change', e => {
-    applyTheme(e.matches ? 'dark' : 'light');
+  // Auf Änderungen reagieren
+  prefersDark.addEventListener('change', (e) => {
+    setTheme(e.matches);
   });
-
 });
